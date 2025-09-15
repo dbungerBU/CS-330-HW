@@ -1,0 +1,17 @@
+{
+  "graph": {
+    "0": {
+      "1": true
+    },
+    "1": {},
+    "2": {
+      "0": true
+    }
+  },
+  "source": "2",
+  "meta": {
+    "n": 3,
+    "p": 0.33,
+    "allow_self_loops": false
+  }
+}

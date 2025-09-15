@@ -1,0 +1,36 @@
+{
+  "graph": {
+    "0": {
+      "1": true,
+      "3": true,
+      "4": true
+    },
+    "1": {
+      "0": true,
+      "3": true,
+      "4": true
+    },
+    "2": {
+      "0": true,
+      "3": true,
+      "4": true
+    },
+    "3": {
+      "0": true,
+      "1": true,
+      "2": true
+    },
+    "4": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": true
+    }
+  },
+  "source": "3",
+  "meta": {
+    "n": 5,
+    "p": 0.6,
+    "allow_self_loops": false
+  }
+}

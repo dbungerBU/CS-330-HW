@@ -1,0 +1,89 @@
+{
+  "graph": {
+    "0": {
+      "1": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "9": true
+    },
+    "1": {
+      "2": true,
+      "4": true,
+      "5": true,
+      "8": true,
+      "9": true
+    },
+    "2": {
+      "0": true,
+      "1": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+    },
+    "3": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "4": true,
+      "7": true,
+      "8": true
+    },
+    "4": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "9": true
+    },
+    "5": {
+      "0": true,
+      "3": true,
+      "8": true,
+      "9": true
+    },
+    "6": {
+      "0": true,
+      "1": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "7": true,
+      "8": true
+    },
+    "7": {
+      "4": true,
+      "5": true,
+      "6": true,
+      "9": true
+    },
+    "8": {
+      "0": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "9": true
+    },
+    "9": {
+      "2": true,
+      "5": true,
+      "6": true,
+      "8": true
+    }
+  },
+  "source": "3",
+  "meta": {
+    "n": 10,
+    "p": 0.6,
+    "allow_self_loops": false
+  }
+}
