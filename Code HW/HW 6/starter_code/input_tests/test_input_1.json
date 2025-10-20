@@ -1,0 +1,23 @@
+{
+  "dijkstra": {
+    "graph": {
+      "s": {
+        "b": 0.0,
+        "t": 3.0
+      },
+      "b": {
+        "c": 0.0,
+        "s": 0.0
+      },
+      "c": {
+        "t": 3.0,
+        "b": 0.0
+      },
+      "t": {}
+    },
+    "source": "s"
+  },
+  "meta": {
+    "notes": "Run Dijkstra on the given graph/source and time it."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "dijkstra": {
+    "expected_distances": {
+      "s": 0.0,
+      "b": 0.0,
+      "c": 0.0,
+      "t": 3.0
+    },
+    "expected_implied_weighted_by_parents": {
+      "s": 0.0,
+      "c": 0.0,
+      "t": 3.0,
+      "b": 0.0
+    },
+    "expected_implied_unweighted_by_parents": {
+      "s": 0,
+      "c": 2,
+      "t": 1,
+      "b": 1
+    },
+    "reference_parents": {
+      "s": null,
+      "c": "b",
+      "t": "s",
+      "b": "s"
+    },
+    "time_seconds_reference": 2.6167137548327446e-05
+  }
+}
