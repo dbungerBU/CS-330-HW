@@ -16,6 +16,8 @@ pseudocode/code will help you get a sense of what is happening.
 
 Feel free to look at the PQ implementation in the other file. 
 """
+"""David Bunger, Collaborators: None"""
+
 
 
 def dijkstra(G, s):
@@ -43,6 +45,7 @@ def dijkstra(G, s):
     d = {}
     # parents in shortest paths tree
     parents = {s: None}
+    edgelen = {s:0}
 
     # your implementation from part 1
     Q = MinPriorityQueue()
@@ -58,6 +61,7 @@ def dijkstra(G, s):
         pi[v] = inf
         parents.setdefault(v, None)
         Q.insert(v, inf)
+        edgelen[v] = inf
 
     # Main loop
     while Q.heap:
@@ -75,5 +79,10 @@ def dijkstra(G, s):
                 Q.decrease_key(v, new_priority)
                 pi[v] = new_priority
                 parents[v] = u
+                edgelen[v] = edgelen[u]+1
+            elif pi[v] == d[u] + weight_uv and edgelen[v]>edgelen[u]+1:
+                parents[v] = u
+                d[u] = path_length_u
+                edgelen[v] = edgelen[u]+1
 
     return d, parents
