@@ -16,7 +16,9 @@ pseudocode/code will help you get a sense of what is happening.
 
 Feel free to look at the PQ implementation in the other file. 
 """
-"""David Bunger, Collaborators: None"""
+"""David Bunger, 
+Collaborators: None
+Used https://stackoverflow.com/questions/5292303/how-does-tuple-comparison-work-in-python for reference on tuple comparisons"""
 
 
 
@@ -52,20 +54,20 @@ def dijkstra(G, s):
 
     # Initialize source
     pi[s] = 0.0
-    Q.insert(s, 0.0)
+    Q.insert(s, (0.0,0)) #using a tuple for path length, edge lengthe, since python compares first item then second item
 
     # Initialize all other vertices to infinity
     for v in vertices:
         if v == s:
             continue
         pi[v] = inf
-        parents.setdefault(v, None)
-        Q.insert(v, inf)
         edgelen[v] = inf
+        parents.setdefault(v, None)
+        Q.insert(v, (inf, inf))
 
     # Main loop
     while Q.heap:
-        u, path_length_u = Q.extract_min()  # returns (element, priority)
+        u, (path_length_u, edge_length_u) = Q.extract_min()  # returns (element, (path priority, edge priority))
         d[u] = path_length_u
 
         if path_length_u == inf:
@@ -73,16 +75,13 @@ def dijkstra(G, s):
 
         # For each neighbor v of u
         for v, weight_uv in G[u].items():
-            # Update the best path length to v using edge (u, v) if it improves pi[v]
-            if pi[v] > d[u] + weight_uv:
-                new_priority = d[u] + weight_uv
-                Q.decrease_key(v, new_priority)
-                pi[v] = new_priority
+            # Update the best path length to v using edge (u, v) if it improves pi[v] or edgelen[v] (but only if pi[v] stays the same)
+            if (pi[v], edgelen[v]) > (d[u] + weight_uv, edge_length_u+1):
+                new_length = d[u] + weight_uv
+                new_edges = edge_length_u + 1
+                pi[v] = new_length
+                edgelen[v] = new_edges
                 parents[v] = u
-                edgelen[v] = edgelen[u]+1
-            elif pi[v] == d[u] + weight_uv and edgelen[v]>edgelen[u]+1:
-                parents[v] = u
-                d[u] = path_length_u
-                edgelen[v] = edgelen[u]+1
+                Q.decrease_key(v, (new_length,new_edges))
 
     return d, parents
